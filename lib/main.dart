@@ -63,6 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   style: const TextStyle(
                     fontFamily: "Lobster",
                     fontSize: 250,
+                    color: Colors.black54,
                   ),
                 ),
                 Column(
