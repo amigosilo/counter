@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,12 +11,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Counter App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        // fontFamily: Google.Lobster,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Counter App Home Page'),
     );
   }
 }
@@ -57,30 +57,61 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Row(
-              children: [
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
                 Text(
                   '$_counter',
-                  style: Theme.of(context).textTheme.headline4,
+                  style: GoogleFonts.lobster(
+                    fontSize: 300,
+                    color: Colors.black54,
+                  ),
                 ),
                 Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     IconButton(
-                      icon: const Icon(Icons.add),
+                      iconSize: 115,
+                      color: Colors.blue,
+                      icon: const Icon(
+                        Icons.add_circle,
+                      ),
                       onPressed: _incrementCounter,
                     ),
                     IconButton(
-                      icon: const Icon(Icons.remove),
+                      iconSize: 115,
+                      icon: const Icon(
+                        Icons.remove_circle_outline,
+                        color: Colors.blue,
+                      ),
                       onPressed: _decrementCounter,
                     ),
                   ],
                 )
               ],
             ),
-            OutlinedButton(
+            const SizedBox(
+              height: 100,
+            ),
+            ElevatedButton(
               onPressed: _resetCounter,
-              child: const Text('Reset'),
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.grey),
+                foregroundColor: MaterialStateProperty.all(Colors.black),
+                fixedSize: MaterialStateProperty.all(const Size(120, 50)),
+                textStyle: MaterialStateProperty.all(
+                  const TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+              child: const Text(
+                'Reset',
+              ),
             ),
           ],
         ),
