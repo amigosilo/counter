@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -51,9 +50,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -64,9 +60,9 @@ class _MyHomePageState extends State<MyHomePage> {
               children: <Widget>[
                 Text(
                   '$_counter',
-                  style: GoogleFonts.lobster(
-                    fontSize: 300,
-                    color: Colors.black54,
+                  style: const TextStyle(
+                    fontFamily: "Lobster",
+                    fontSize: 250,
                   ),
                 ),
                 Column(
@@ -74,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     IconButton(
-                      iconSize: 115,
+                      iconSize: 100,
                       color: Colors.blue,
                       icon: const Icon(
                         Icons.add_circle,
@@ -82,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       onPressed: _incrementCounter,
                     ),
                     IconButton(
-                      iconSize: 115,
+                      iconSize: 100,
                       icon: const Icon(
                         Icons.remove_circle_outline,
                         color: Colors.blue,
